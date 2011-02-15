@@ -1,0 +1,19 @@
+
+SOY (Sparse Operations with Yorick)
+Copyright (C) 2004 Ralf Flicker (rflicker@mac.com)
+Copyright (C) 2010 MArcos van Dam (marcos@flatwavefronts.com)
+
+Installation instructions (Yorick v. >= 1.6)
+
+ * Unzip and untar into ($Y_SITE)/contrib/
+
+ * cd soy, yorick -batch make.i
+
+(if, for any reason, this doesn't give you the proper
+Makefile, just edit the included Makefile to point to
+your Make.cfg)
+
+ * make plugin, make check-plug, make install-plug
+
+ * To load the plugin into yorick, type #include "soy.i"
+

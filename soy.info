@@ -1,0 +1,45 @@
+Package: soy
+Kind: plugin
+Version: 1.3.2
+Revision: 1
+Description: Sparse Matrix Operations
+License: GPL
+Author: Ralf Flicker, Marcos van Dam
+Maintainer: Francois Rigaut <frigaut@users.sourceforge.net>
+OS: 
+Depends: yorick(>=1.6.02)
+Source: http://www.maumae.net/yorick/packages/%o/tarballs/soy-%v-%o.tgz
+Source-MD5: 
+Source-Directory: contrib/soy
+DocFiles: README TODO VERSION NEWS LEGAL doc/README:README.doc doc/FILE_FORMATS doc/*.doc doc/*.pdf doc/*.ps doc/*.tex
+Homepage: http://www.maumae.net/yorick/doc/plugins.php
+DescDetail: <<
+
+SOY: Sparse Operations with Yorick
+Ralf Flicker (rflicker@mac.com), 18 Nov 2004
+Additions and bugfixes by Marcos van Dam (2010)
+
+Installation instructions (Yorick v. >= 1.6)
+
+ * Unzip and untar into ($Y_SITE)/contrib/
+
+ * cd soy, yorick -batch make.i
+
+(if, for any reason, this doesn't give you the proper
+Makefile, just edit the included Makefile to point to
+your Make.cfg)
+
+ * make plugin, make check-plug, make install-plug
+
+ * To load the plugin into yorick, type #include "soy.i"
+<<
+DescUsage: <<
+ * make plugin, make check-plug, make install-plug
+
+ * To load the plugin into yorick, type #include "soy.i"
+<<
+DescPort: <<
+This package will compile Yorick only on MacOSX 10.3.4 or later, because
+of a bug in the system math library libm (part of /usr/lib/LibSystem.dylib)
+in earlier versions of MacOSX 10.3.
+<<
