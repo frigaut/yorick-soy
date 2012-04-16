@@ -1,6 +1,6 @@
 Package: soy
 Kind: plugin
-Version: 1.3.2
+Version: 1.4.0
 Revision: 1
 Description: Sparse Matrix Operations
 License: GPL
