@@ -679,7 +679,7 @@ func rcobuild(&a,v,t,ur=,un=)
   if (a == [] && typeof(v) == "float") a = rco();
   if (a == [] && typeof(v) == "double") a = rco_d();
   if (*a.xn == [] && typeof(v) == "float") a.xn = &(array(float,un));
-  if (*a.xn == [] && typeof(v) == "double") a.xn = &(array(float,un));
+  if (*a.xn == [] && typeof(v) == "double") a.xn = &(array(double,un));
   if (*a.ix == []) a.ix = &(array(long,ur));
   if (*a.jx == []) a.jx = &(array(long,un));
   if (a.c == 0) {
@@ -979,7 +979,11 @@ func ruo2rco(a)
   */
 {
   d = (*a.xd)(1:a.r);
+  if (typeof(d) == "double"){
+    u = rco_d();
+  } else {
   u = rco();
+  }
   u.jx = &((*a.jx)(1:a.n+2));
   u.xn = &((*a.xn)(1:a.n+2));
   u.ix = &((*a.ix)(1:a.r+3));
@@ -994,7 +998,11 @@ func ruo2rco(a)
   dix(1:u.r+1) += long(span(1,u.r+1,u.r+1)-1);
   dix(u.r+2) = dix(u.r+1);
   djx = array(long,u.n+u.r+2);
+  if (typeof(d) == "double"){
+    dxn = array(double,u.n+u.r+2);
+  } else {
   dxn = array(float,u.n+u.r+2);
+  }
   for (i=1; i<=u.r; i++) {
     djx(dix(i)+1) = i-1;
     dxn(dix(i)+1) = d(i);
